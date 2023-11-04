@@ -1,12 +1,3 @@
-# Network Egress Terraform module
-
-Terraform module which creates Transit Gateway, VPC Attachment & Routes to Egress resources.
-
-## Usage
-
-### Create Transit Gateway, VPC Attachment & Routes to Egress resources
-
-```hcl
 module "network_egress" {
   source             = "../"
   name               = "network-egress"
@@ -125,7 +116,3 @@ module "test_vpc" {
   azs             = ["eu-west-1a", "eu-west-1b", "eu-west-1c"]
   private_subnets = ["10.2.1.0/24", "10.2.2.0/24", "10.2.3.0/24"]
 }
-```
-## Authors
-
-Hector
