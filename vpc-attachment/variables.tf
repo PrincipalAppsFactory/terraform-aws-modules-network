@@ -1,24 +1,22 @@
 variable "name" {
-  default = ""
-}
-variable "description" {
-  default = ""
-}
-variable "transit_gateway_id" {
-  default = ""
-}
-variable "tgw_routes" {
-  type = any
-}
-variable "tgw_blackhole" {
   type = string
 }
-variable "tags" {
-  type = map(string)
+variable "description" {
+  type = string
 }
-
-variable "vpc_id" {
+variable "transit_gateway_id" {
+  type = string
+}
+variable "tgw_routes" {
+  default = []
+  type    = any
+}
+variable "tgw_blackhole" {
   default = ""
+  type    = string
+}
+variable "vpc_id" {
+  type = string
 }
 variable "subnet_ids" {
   type = list(string)
@@ -32,10 +30,10 @@ variable "ipv6_support" {
 variable "appliance_mode_support" {
   default = false
 }
-variable "transit_gateway_default_route_table_association" {
+variable "table_association" {
   default = true
 }
-variable "transit_gateway_default_route_table_propagation" {
+variable "table_propagation" {
   default = true
 }
 variable "route_table_ids" {
