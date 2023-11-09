@@ -114,7 +114,7 @@ data "aws_iam_policy_document" "this" {
       "logs:DescribeLogStreams",
     ]
 
-    resources = ["arn:aws:logs:*:${data.aws_caller_identity}:log-group:/aws/vpc-flow-log/*"]
+    resources = ["arn:aws:logs:*:${data.aws_caller_identity.current.account_id}:log-group:/aws/vpc-flow-log/*"]
   }
 }
 
